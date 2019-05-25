@@ -1,36 +1,27 @@
 #include "InMemoryStorage.h"
 
-InMemoryStorage::InMemoryStorage()
+void InMemoryStorage::begin_tx()
 {
+	//enter
 }
 
-InMemoryStorage::~InMemoryStorage()
+void InMemoryStorage::end_tx()
 {
+	//leave
 }
 
-void InMemoryStorage::_begin_tx()
+bool InMemoryStorage::push_back(void * data)
 {
-}
-
-bool InMemoryStorage::_push_back(const int * data)
-{
-	if(nullptr == data)
-		return false;
-	this->_pool.push(*data);
+	this->storage.push(data);
 	return true;
 }
 
-bool InMemoryStorage::_pop_front(int * data)
+bool InMemoryStorage::pop_front(void ** data)
 {
-	if(nullptr == data)
+	if (nullptr == data || this->storage.size() == 0) {
 		return false;
-
-	*data = this->_pool.front();
-	this->_pool.pop();
-
+	}
+	*data = this->storage.front();
+	this->storage.pop();
 	return true;
-}
-
-void InMemoryStorage::_end_tx()
-{
 }

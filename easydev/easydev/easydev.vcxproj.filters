@@ -18,6 +18,12 @@
     <ClInclude Include="Task.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="DataType.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStorage.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
     <ClInclude Include="Storage.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -26,6 +32,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DataType.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="InMemoryStorage.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>

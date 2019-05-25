@@ -2,15 +2,13 @@
 #include "Storage.h"
 #include <queue>
 
-class InMemoryStorage : public Storage<int> {
-private:
-	std::queue<int> _pool;
+class InMemoryStorage : public Storage {
 public:
-	InMemoryStorage();
-	~InMemoryStorage();
+	void begin_tx();
+	void end_tx();
+
+	bool push_back(void* data);
+	bool pop_front(void** data);
 private:
-	void _begin_tx();
-	bool _push_back(const int* data);
-	bool _pop_front(int* data);
-	void _end_tx();
+	std::queue<void*> storage;
 };
