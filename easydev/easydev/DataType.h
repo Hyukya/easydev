@@ -22,3 +22,25 @@ public:
 private:
 	int32_t data;
 };
+
+class Integer64 : public DataType {
+public:
+	Integer64();
+	virtual ~Integer64();
+
+	Integer64(const int64_t int64_t);
+	operator long long();
+private:
+	int64_t data;
+};
+
+class String : public DataType {
+public:
+	String();
+	virtual ~String();
+
+	String(const std::string string);
+	operator std::string();
+private:
+	std::string data;
+};

@@ -1,8 +1,7 @@
 #pragma once
 #include "DataType.h"
 #include "Storage.h"
-class DataStorage
-{
+class DataStorage {
 public:
 	DataStorage(Storage* storage) {
 		this->s = storage;

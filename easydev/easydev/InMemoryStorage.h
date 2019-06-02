@@ -1,6 +1,7 @@
 #pragma once
 #include "Storage.h"
 #include <queue>
+#include <mutex>
 
 class InMemoryStorage : public Storage {
 public:
@@ -11,4 +12,5 @@ public:
 	bool pop_front(void** data);
 private:
 	std::queue<void*> storage;
+	std::mutex mutex;
 };

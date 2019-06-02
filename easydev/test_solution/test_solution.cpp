@@ -3,36 +3,62 @@
 
 #include "pch.h"
 #include <iostream>
+#include "..\\easydev\Task.h"
 #include "..\\easydev\DataStorage.h"
 #include "..\\easydev\InMemoryStorage.h"
 
 #ifdef _DEBUG
-#ifdef _WIN32
+#ifdef WIN32
 #pragma comment(lib, "..\\Debug\\easydev.lib")
 #else
 #pragma comment(lib, "..\\x64\\Debug\\easydev.lib")
 #endif
 #else
-#ifdef _WIN32
+#ifdef WIN32
 #pragma comment(lib, "..\\Release\\easydev.lib")
 #else
 #pragma comment(lib, "..\\x64\\Release\\easydev.lib")
 #endif
 #endif
 
+void Test_Task() {
+	Task *t = nullptr;
+	_ASSERT(t == nullptr);
+}
+void Test_Storage() {
+	Storage *ss = nullptr;
+	_ASSERT(ss == nullptr);
+}
+void Test_DataType() {
+	DataType dt;
+	Integer32 int32;
+	int32 = 1;
+	_ASSERT(1 == int32);
+	Integer64 int64;
+	int64 = 1;
+	_ASSERT(1 == int64);
+	String string;
+	string = std::string("string");
+	_ASSERT(!std::string("string").compare(string));
+}
+void Test_DataStorage() {
+	InMemoryStorage is;
+	DataStorage ds(&is);
+	ds.begin_tx();
+	Integer32 *push_data = new Integer32(1);
+	ds.push_back(push_data);
+	//TODO
+	//Integer32 *pop_data = nullptr;
+	DataType *pop_data = nullptr;
+	ds.pop_front(&pop_data);
+	ds.end_tx();
+	_ASSERT(*reinterpret_cast<Integer32*>(pop_data) == 1);
+}
 int main()
 {
-    std::cout << "Hello World!\n";
-	int input = 1;
-	int output = 0;
-	printf("[%d] : [%d]\n", input, output);
-	
-	DataStorage *ds = new DataStorage(new InMemoryStorage());
-	ds->push_back(new Integer32(input));
-
-	DataType *i_out;
-	ds->pop_front(&i_out);
-
-	output = *reinterpret_cast<Integer32*>(i_out);
-	printf("[%d] : [%d]\n", input, output);
+	Test_Task();
+	Test_Storage();
+	Test_DataType();
+	Test_DataStorage();
+	return 0;
 }
