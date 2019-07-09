@@ -155,15 +155,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DataStorage.h" />
     <ClInclude Include="DataType.h" />
     <ClInclude Include="InMemoryStorage.h" />
+    <ClInclude Include="BaseDataType.h" />
     <ClInclude Include="Storage.h" />
     <ClInclude Include="Task.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataType.cpp" />
     <ClCompile Include="InMemoryStorage.cpp" />
+    <ClCompile Include="BaseDataType.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
