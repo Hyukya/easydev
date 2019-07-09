@@ -1,27 +1,35 @@
 #include "InMemoryStorage.h"
 
-void InMemoryStorage::begin_tx()
+void InMemoryStorage::BeginTransaction()
 {
-	this->mutex.lock();
+	this->mutex_.lock();
 }
 
-void InMemoryStorage::end_tx()
+void InMemoryStorage::EndTransaction()
 {
-	this->mutex.unlock();
+	this->mutex_.unlock();
 }
 
-bool InMemoryStorage::push_back(void *data)
+uint64_t InMemoryStorage::Size()
 {
-	this->storage.push(data);
-	return true;
+	return 0;
+}
+uint64_t InMemoryStorage::Count()
+{
+	return this->storage_.size();
 }
 
-bool InMemoryStorage::pop_front(void **data)
+void InMemoryStorage::Push(const DataType& data_type)
 {
-	if (nullptr == data || this->storage.size() == 0) {
-		return false;
-	}
-	*data = this->storage.front();
-	this->storage.pop();
-	return true;
+	//TODO
+}
+
+const DataType& InMemoryStorage::Front()
+{
+	//TODO
+}
+
+void InMemoryStorage::Pop()
+{
+	//TODO
 }

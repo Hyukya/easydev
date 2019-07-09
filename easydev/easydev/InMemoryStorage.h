@@ -5,12 +5,19 @@
 
 class InMemoryStorage : public Storage {
 public:
-	void begin_tx();
-	void end_tx();
+	virtual void BeginTransaction();
+	virtual void EndTransaction();
 
-	bool push_back(void* data);
-	bool pop_front(void** data);
+	// space size of Storage
+	virtual uint64_t Size();
+	// DataType counts in Storage
+	virtual uint64_t Count();
+
+	// interface for queue
+	virtual void Push(const DataType&);
+	virtual const DataType& Front();
+	virtual void Pop();
 private:
-	std::queue<void*> storage;
-	std::mutex mutex;
+	std::queue<DataType*> storage_;
+	std::mutex mutex_;
 };
