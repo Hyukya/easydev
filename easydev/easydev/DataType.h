@@ -5,6 +5,8 @@ class DataType {
 public:
 	DataType();
 	virtual ~DataType();
+
+	std::string GetName();
 protected:
 	std::string name_;
 private:
