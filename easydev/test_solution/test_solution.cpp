@@ -3,9 +3,9 @@
 
 #include "pch.h"
 #include <iostream>
-#include "..\\easydev\Task.h"
-#include "..\\easydev\DataStorage.h"
-#include "..\\easydev\InMemoryStorage.h"
+#include "../easydev/Task.h"
+#include "../easydev/BaseDataType.h"
+#include "../easydev/InMemoryStorage.h"
 
 #ifdef _DEBUG
 #ifdef WIN32
@@ -25,10 +25,6 @@ void Test_Task() {
 	Task *t = nullptr;
 	_ASSERT(t == nullptr);
 }
-void Test_Storage() {
-	Storage *ss = nullptr;
-	_ASSERT(ss == nullptr);
-}
 void Test_DataType() {
 	DataType dt;
 	Integer32 int32;
@@ -41,24 +37,21 @@ void Test_DataType() {
 	string = std::string("string");
 	_ASSERT(!std::string("string").compare(string));
 }
-void Test_DataStorage() {
+void Test_Storage() {
 	InMemoryStorage is;
-	DataStorage ds(&is);
-	ds.begin_tx();
-	Integer32 *push_data = new Integer32(1);
-	ds.push_back(push_data);
-	//TODO
-	//Integer32 *pop_data = nullptr;
-	DataType *pop_data = nullptr;
-	ds.pop_front(&pop_data);
-	ds.end_tx();
-	_ASSERT(*reinterpret_cast<Integer32*>(pop_data) == 1);
+	is.BeginTransaction();
+	Integer32 push_data(1);
+	is.Push(push_data);
+
+	DataType pop_data;
+	pop_data = is.Front();
+	is.EndTransaction();
+//	_ASSERT(pop_data == 1);
 }
 int main()
 {
 	Test_Task();
 	Test_Storage();
 	Test_DataType();
-	Test_DataStorage();
 	return 0;
 }
