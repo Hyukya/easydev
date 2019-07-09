@@ -9,5 +9,4 @@ protected:
 	std::string name_;
 private:
 	DataType(const DataType&);
-	DataType& operator=(const DataType&);
 };
