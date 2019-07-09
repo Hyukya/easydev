@@ -1,17 +1,14 @@
 #include "DataType.h"
 
-DataType::DataType(std::string name) { this->name = name; }
-DataType::DataType() { DataType(""); }
-DataType::~DataType() {}
-DataType::DataType(const DataType&) {}
-DataType& DataType::operator=(const DataType &) { return *this; }
-
-#include "DataType.h"
-
-DataType::DataType(std::string name)
+DataType::DataType()
 {
-	this->name_ = name;
+	this->name_ = "DataType";
 }
 DataType::~DataType()
+{}
+DataType::DataType(const DataType&)
+{}
+DataType& DataType::operator=(const DataType &)
 {
+	return *this;
 }

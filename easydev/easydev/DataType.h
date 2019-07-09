@@ -3,12 +3,11 @@
 
 class DataType {
 public:
-	DataType(std::string name);
+	DataType();
 	virtual ~DataType();
 protected:
 	std::string name_;
 private:
-	DataType() {}
-	DataType(const DataType&) {}
-	DataType& operator=(const DataType&) {}
+	DataType(const DataType&);
+	DataType& operator=(const DataType&);
 };
