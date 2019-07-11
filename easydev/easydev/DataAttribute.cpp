@@ -21,3 +21,8 @@ DataAttribute::~DataAttribute()
         this->data_ = nullptr;
     }
 }
+
+std::string DataAttribute::GetName()
+{
+    return this->name_;
+}
