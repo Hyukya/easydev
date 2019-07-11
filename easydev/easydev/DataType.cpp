@@ -1,17 +1,18 @@
 #include "DataType.h"
 
-DataType::DataType()
+DataType::DataType(const DataAttribute& data_attribute) : data_attribute_(data_attribute)
 {
-	this->name_ = "DataType";
 }
 
 DataType::~DataType()
 {}
 
+DataType::DataType()
+{}
 DataType::DataType(const DataType&)
 {}
 
 std::string DataType::GetName()
 {
-	return this->name_;
+	return this->data_attribute_.GetName();
 }

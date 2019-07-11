@@ -1,14 +1,17 @@
 #pragma once
-#include <string>
+
+#include "DataAttribute.h"
 
 class DataType {
 public:
-	DataType();
+	DataType(const DataAttribute& data_attribute);
 	virtual ~DataType();
 
 	std::string GetName();
-protected:
-	std::string name_;
 private:
+	DataType();
 	DataType(const DataType&);
+
+private:
+	DataAttribute data_attribute_;
 };
