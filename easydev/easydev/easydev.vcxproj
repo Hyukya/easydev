@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DataAttribute.h" />
     <ClInclude Include="DataType.h" />
     <ClInclude Include="InMemoryStorage.h" />
     <ClInclude Include="BaseDataType.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Task.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DataAttribute.cpp" />
     <ClCompile Include="DataType.cpp" />
     <ClCompile Include="InMemoryStorage.cpp" />
     <ClCompile Include="BaseDataType.cpp" />

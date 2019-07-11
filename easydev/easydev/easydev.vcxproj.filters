@@ -30,6 +30,9 @@
     <ClInclude Include="InMemoryStorage.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="DataAttribute.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataType.cpp">
@@ -39,6 +42,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="InMemoryStorage.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DataAttribute.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
