@@ -1,6 +1,6 @@
 #include "DataAttribute.h"
 
-DataAttribute::DataAttribute()
+DataAttribute::DataAttribute(const std::string& name) : name_(name)
 {
 }
 
