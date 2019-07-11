@@ -1,6 +1,6 @@
 #include "DataAttribute.h"
 
-DataAttribute::DataAttribute(const std::string& name, const uint64_t& size) : name_(name), size_(size)
+DataAttribute::DataAttribute(const std::string& name, const uint32_t& size) : name_(name), size_(size)
 {
     if(0 != this->size_)
     {
