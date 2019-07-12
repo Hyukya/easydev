@@ -24,9 +24,6 @@
     <ClInclude Include="Storage.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="BaseDataType.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="InMemoryStorage.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -36,9 +33,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataType.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="BaseDataType.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="InMemoryStorage.cpp">
