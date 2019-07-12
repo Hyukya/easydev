@@ -9,6 +9,9 @@ public:
 	virtual ~DataAttribute();
 
 	const std::string& GetName() const;
+
+private:
+	DataAttribute() {}
 private:
     std::string name_;
 	uint32_t size_;
