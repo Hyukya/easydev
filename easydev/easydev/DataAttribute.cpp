@@ -22,7 +22,7 @@ DataAttribute::~DataAttribute()
     }
 }
 
-std::string DataAttribute::GetName()
+const std::string& DataAttribute::GetName() const
 {
     return this->name_;
 }
