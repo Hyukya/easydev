@@ -4,12 +4,11 @@
 
 class DataType {
 public:
+	DataType(const DataAttribute& data_attribute);
 	virtual ~DataType();
 
 	const DataAttribute::DATA_TYPE GetType();
 
-private:
-	DataType(const DataAttribute& data_attribute);
 private:
 	DataAttribute data_attribute_;
 };
