@@ -8,6 +8,7 @@ class DataAttribute
 public:
 	DataAttribute(const std::string& name, const uint32_t& size);
 	virtual ~DataAttribute();
+	DataAttribute(const DataAttribute& source);
 
 	const std::string& GetName() const;
 
