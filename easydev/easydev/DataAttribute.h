@@ -14,7 +14,7 @@ public:
 		END_DATA_TYPE
 	};
 public:
-	DataAttribute(const DATA_TYPE& name, const uint32_t& size);
+	DataAttribute(const DATA_TYPE& type, const uint32_t& size);
 	virtual ~DataAttribute();
 
 	const DATA_TYPE& GetType() const;
