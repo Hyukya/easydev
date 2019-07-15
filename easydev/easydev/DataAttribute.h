@@ -20,7 +20,7 @@ public:
 	const DATA_TYPE& GetType() const;
 
 private:
-	DataAttribute() {}
+	DataAttribute() = delete;
 private:
 	DATA_TYPE type_;
 	uint32_t size_;
