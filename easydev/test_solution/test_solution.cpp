@@ -27,10 +27,10 @@ void Test_Task()
 }
 void Test_DataType()
 {
-	DataType *dt = DataType::GetInstance(DataAttribute::DATA_TYPE::UINT32_T);
-	//*dt = 1;
-	//_ASSERT(*dt == 1);
-	delete dt;
+	DataAttribute data_attribute("uint32_t", 4);
+	DataType dt(data_attribute);
+	dt = 1;
+	_ASSERT(dt == 1);
 }
 void Test_Storage()
 {
