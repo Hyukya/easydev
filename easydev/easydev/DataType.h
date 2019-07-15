@@ -6,8 +6,6 @@ class DataType {
 public:
 	virtual ~DataType();
 
-	static DataType* GetInstance(const DataAttribute::DATA_TYPE& data_type);
-
 	const DataAttribute::DATA_TYPE GetType();
 
 private:
