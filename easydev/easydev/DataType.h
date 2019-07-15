@@ -7,7 +7,7 @@ public:
 	DataType(const DataAttribute& data_attribute);
 	virtual ~DataType();
 
-	const DataAttribute::DATA_TYPE GetType();
+	const std::string& GetName() const;
 private:
 	DataType() = delete;
 private:
