@@ -1,19 +1,28 @@
 #pragma once
 
-#include <string>
+#include <stdint.h>
 
 class DataAttribute
 {
 public:
-	DataAttribute(const std::string& name, const uint32_t& size);
+	enum class DATA_TYPE {
+		UINT32_T,
+		INT32_T,
+		UINT64_T,
+		INT64_T,
+		STRING,
+		END_DATA_TYPE
+	};
+public:
+	DataAttribute(const DATA_TYPE& name, const uint32_t& size);
 	virtual ~DataAttribute();
 
-	const std::string& GetName() const;
+	const DATA_TYPE& GetType() const;
 
 private:
 	DataAttribute() {}
 private:
-    std::string name_;
+	DATA_TYPE type_;
 	uint32_t size_;
 	void* data_;
 };
