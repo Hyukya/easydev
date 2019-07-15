@@ -8,7 +8,8 @@ public:
 	virtual ~DataType();
 
 	const DataAttribute::DATA_TYPE GetType();
-
+private:
+	DataType() = delete;
 private:
 	DataAttribute data_attribute_;
 };
