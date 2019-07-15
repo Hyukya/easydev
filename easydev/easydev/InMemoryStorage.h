@@ -18,6 +18,6 @@ public:
 	virtual const DataType& Front();
 	virtual void Pop();
 private:
-	std::queue<DataType*> storage_;
+	std::queue<DataType> storage_;
 	std::mutex mutex_;
 };
