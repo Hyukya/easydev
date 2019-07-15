@@ -12,6 +12,9 @@ public:
 
 	const std::string& GetName() const;
 
+	const void* GetData() const;
+	void SetData(const void* data, const uint32_t size);
+
 private:
 	DataAttribute() = delete;
 private:

@@ -40,3 +40,19 @@ const std::string& DataAttribute::GetName() const
 {
     return this->name_;
 }
+
+const void* DataAttribute::GetData() const
+{
+	return this->data_;
+}
+
+void DataAttribute::SetData(const void* data, const uint32_t size)
+{
+	errno_t err = memcpy_s(this->data_, this->size_, data, size);
+	if(0 == err)
+	{
+	}
+	else
+	{
+	}
+}
