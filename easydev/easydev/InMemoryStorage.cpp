@@ -21,15 +21,15 @@ uint64_t InMemoryStorage::Count()
 
 void InMemoryStorage::Push(const DataType& data_type)
 {
-	//TODO
+	this->storage_.push(data_type);
 }
 
 const DataType& InMemoryStorage::Front()
 {
-	//TODO
+	return this->storage_.front();
 }
 
 void InMemoryStorage::Pop()
 {
-	//TODO
+	this->storage_.pop();
 }
